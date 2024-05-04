@@ -1,5 +1,7 @@
 import { createServer, createViteRuntime } from "vite";
 
 const server = await createServer();
+await server.listen();
 const runtime = await createViteRuntime(server);
-await runtime.executeUrl("module.js");
+const res = await runtime.executeUrl("module.js");
+console.log(res);
